@@ -16,4 +16,9 @@ class CategoriesController extends Controller
     {
         return view('categories.index')->with('categories', Category::all());
     }
+
+    public function create()
+    {
+        return view('categories.create');
+    }
 }
