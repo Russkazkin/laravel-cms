@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use http\Exception\InvalidArgumentException;
 use Illuminate\Http\Request;
+use mysql_xdevapi\Exception;
 
 class CategoriesController extends Controller
 {
@@ -33,6 +34,13 @@ class CategoriesController extends Controller
         $category->name = $data['name'];
         $category->save();
         session()->flash('success', 'Category created successfully.');
+        return redirect('/categories');
+    }
+
+    public function delete(Category $category)
+    {
+        $category->delete();
+        session()->flash('success', 'Category deleted successfully.');
         return redirect('/categories');
     }
 }

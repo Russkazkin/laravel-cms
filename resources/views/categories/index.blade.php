@@ -18,8 +18,13 @@
                         @foreach($categories as $category)
                             <li class="list-group-item">
                                 {{ $category->name }}
-                                <a href="/categories/{{ $category->id }}"
-                                   class="btn btn-danger btn-sm float-right">Delete</a>
+                                <form style="display: inline-block" action="/categories/{{ $category->id }}/delete" method="POST" class="float-right">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        Delete
+                                    </button>
+                                </form>
                                 <a href="/categories/{{ $category->id }}/edit"
                                    class="btn btn-success btn-sm float-right mr-1">Edit</a>
                             </li>
