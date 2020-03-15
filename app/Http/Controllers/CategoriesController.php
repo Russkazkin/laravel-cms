@@ -26,7 +26,7 @@ class CategoriesController extends Controller
     public function store()
     {
         $this->validate(request(), [
-            'name' => 'required | min: 2 | max: 12',
+            'name' => 'required | min: 2 | max: 12 | unique:categories',
         ]);
         $data = request()->all();
         $category = new Category();
