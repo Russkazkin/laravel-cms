@@ -26,3 +26,4 @@ Route::get('/categories/new', 'CategoriesController@create');
 Route::post('/store-category', 'CategoriesController@store');
 Route::delete('/categories/{category}/delete', 'CategoriesController@delete');
 Route::get('/categories/{category}/edit', 'CategoriesController@edit');
+Route::patch('/categories/{category}/update-category', 'CategoriesController@update');

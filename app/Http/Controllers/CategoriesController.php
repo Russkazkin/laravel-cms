@@ -48,4 +48,16 @@ class CategoriesController extends Controller
     {
         return view('categories.edit')->with('category', $category);
     }
+
+    public function update(Category $category)
+    {
+        $this->validate(request(), [
+            'name' => 'required | min: 2 | max: 12 | unique:categories',
+        ]);
+        $data = request()->all();
+        $category->name = $data['name'];
+        $category->save();
+        session()->flash('success', 'Category updated successfully.');
+        return redirect('/categories');
+    }
 }
