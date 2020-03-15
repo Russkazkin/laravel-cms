@@ -16,6 +16,7 @@
 
                     You are logged in!
                 </div>
+                <a href="/categories/new" class="btn btn-success">Add Category</a>
             </div>
         </div>
     </div>
