@@ -43,4 +43,9 @@ class CategoriesController extends Controller
         session()->flash('success', 'Category deleted successfully.');
         return redirect('/categories');
     }
+
+    public function edit(Category $category)
+    {
+        return view('categories.edit')->with('category', $category);
+    }
 }

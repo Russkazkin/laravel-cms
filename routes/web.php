@@ -25,4 +25,4 @@ Route::get('/categories', 'CategoriesController@index');
 Route::get('/categories/new', 'CategoriesController@create');
 Route::post('/store-category', 'CategoriesController@store');
 Route::delete('/categories/{category}/delete', 'CategoriesController@delete');
-Route::get('category/{category}/edit', 'CategoriesController@edit');
+Route::get('/categories/{category}/edit', 'CategoriesController@edit');
